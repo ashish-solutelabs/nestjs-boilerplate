@@ -9,8 +9,8 @@ import { IPayload, IAuthResponse } from './interface';
 import { UserService } from './../user/user.service';
 import { LoginDto } from './dto';
 import { UserEntity } from './../user/entities';
-import { compareHash } from '@utility';
-import { ERROR_CODES } from '@errors';
+import { compareHash, generateHash } from '../../core/utility/bcrypt/index';
+import { ERROR_CODES } from '../../core/error-code/index';
 
 @Injectable()
 export class AuthService {
@@ -88,6 +88,7 @@ export class AuthService {
     if (!user.password) {
       throw new BadRequestException('Please setup your account');
     }
+
     const isPasswordValid = await compareHash(password, user.password);
     if (!isPasswordValid) {
       throw new BadRequestException(
@@ -95,7 +96,6 @@ export class AuthService {
         ERROR_CODES.INCORRECT_PASSWORD,
       );
     }
-
     return user ? user : null;
   }
 }

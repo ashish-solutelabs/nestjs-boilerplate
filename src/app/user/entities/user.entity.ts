@@ -3,6 +3,9 @@ import { BaseEntity } from '../../utility/entity';
 
 @Entity('user')
 export class UserEntity extends BaseEntity  {
+  filter(arg0: (user: any) => boolean) {
+      throw new Error('Method not implemented.');
+  }
   @Column('text')
   email: string;
 

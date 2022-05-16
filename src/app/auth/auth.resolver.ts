@@ -5,6 +5,9 @@ import { AuthResponse } from './models';
 
 @Resolver()
 export class AuthResolver {
+  // create(user: (user: any) => any): any {
+  //     throw new Error('Method not implemented.');
+  // }
   constructor(private readonly authService: AuthService) {}
 
   @Mutation(() => AuthResponse)

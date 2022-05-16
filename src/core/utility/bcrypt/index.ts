@@ -7,3 +7,4 @@ export const generateHash = async (password: string) => {
 export const compareHash = async (password: string, hash: string) => {
   return bcryptjs.compare(password, hash);
 };
+

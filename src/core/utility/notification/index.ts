@@ -8,28 +8,28 @@ import {
 @Injectable()
 export class OnesignalService {
   constructor(private httpService: HttpService) {}
-  async createNotificatioBaseOnExternalId(
-    payload: IOneSignalSendNotificationByExternalIdsPayload,
-  ) {
-    payload.app_id = ONE_SIGNAL_API_KEY;
-    const headers = {
-      'Content-Type': 'application/json; charset=utf-8',
-      Authorization: `Basic ${ONE_SIGNAL_REST_API_KEY}`,
-    };
-    try {
-      return this.httpService
-        .post(
-          'https://onesignal.com:443/api/v1/notifications',
-          JSON.stringify(payload),
-          {
-            headers: headers,
-          },
-        )
-        .toPromise();
-    } catch (error) {
-      Logger.error(error, '', 'ONESIGNAL CREATE NOTIFICATION ERROR');
-    }
-  }
+  // async createNotificatioBaseOnExternalId(
+  //   payload: IOneSignalSendNotificationByExternalIdsPayload,
+  // ) {
+  //   payload.app_id = ONE_SIGNAL_API_KEY;
+  //   const headers = {
+  //     'Content-Type': 'application/json; charset=utf-8',
+  //     Authorization: `Basic ${ONE_SIGNAL_REST_API_KEY}`,
+  //   };
+  //   try {
+  //     return this.httpService
+  //       .post(
+  //         'https://onesignal.com:443/api/v1/notifications',
+  //         JSON.stringify(payload),
+  //         {
+  //           headers: headers,
+  //         },
+  //       )
+  //       .toPromise();
+  //   } catch (error) {
+  //     Logger.error(error, '', 'ONESIGNAL CREATE NOTIFICATION ERROR');
+  //   }
+  // }
   // async cancelNotificatioBaseOnExternalId(
   //   payload: IOneSignalCancelNotificationByExternalIdsPayload,
   // ) {

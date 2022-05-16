@@ -16,7 +16,7 @@
 		"noImplicitAny": false,
 		"typeRoots": ["node_modules/@types", "types"],
     "paths": {
-      
+      "@auth/*": ["src/app/auth/*"],
       "@environments": ["src/core/environment"],
       "@constants": ["src/core/constant"],
       "@errors": ["src/core/error-code"],

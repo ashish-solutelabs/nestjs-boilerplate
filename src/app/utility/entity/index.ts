@@ -1,16 +1,16 @@
 import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
-  UpdateDateColumn,
+  Column,
 } from 'typeorm';
 
 export class BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
-  @CreateDateColumn()
-  created_at: Date;
+  @Column()
+  created_at: String;
 
-  @UpdateDateColumn()
-  updated_at: Date;
+  @Column()
+  updated_at: String;
 }

@@ -12,9 +12,9 @@ import {
   IResetPasswordResponse,
 } from './interface';
 import { UserService } from './../../user/user.service';
-import { compareHash, generateHash } from '@utility';
-import { UtilityService } from 'src/app/utility';
-import { ERROR_CODES } from '@errors';
+import { compareHash, generateHash } from '../../../core/utility';
+import { UtilityService } from '../../utility';
+import { ERROR_CODES } from '../../../core/error-code';
 
 @Injectable()
 export class PasswordService {

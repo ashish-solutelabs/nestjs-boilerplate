@@ -1,6 +1,6 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { IsEmail } from 'class-validator';
-import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@environments';
+import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '../../../core/environment/index';
 
 export const characterLimitMessage = `Password length must be between ${MIN_PASSWORD_LENGTH} to ${MAX_PASSWORD_LENGTH}`;
 export const characterValidationMessage =
